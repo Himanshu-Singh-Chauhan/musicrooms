@@ -1,12 +1,17 @@
 /**
  * Created by ParikanshAndAtikant on 16/07/2017.
  */
-var roomname = prompt("Enter Room Name ");
+// var roomname = prompt("Enter Room Name ");
+var roomname = "";
 $(function () {
 
     var socket = io();
-    socket.emit('subscribe',roomname);
     var audio = document.getElementById('myaudio');
+    $('#joinroom').click(function () {
+        roomname = $('#roomid').val()
+        socket.emit('subscribe',roomname);
+        console.log(roomname)
+    })
     $('#load').click(function () {
        audio.load();
        $('#load').html('Loading...');

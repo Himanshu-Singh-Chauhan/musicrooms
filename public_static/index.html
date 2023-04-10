@@ -3,12 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <title>Sockets</title>
-    <link
+    <!-- <link
       href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
       rel="stylesheet"
-    />
+    /> -->
 
-    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></script> -->
+    
 
     <style>
       body {
@@ -56,16 +58,20 @@
         <div class="logo">StereoConnect</div>
         
       </div>
+
+    <input id="roomid" placeholder="enter room id" class="p-4 text-black"/>
+    <button id = "joinroom" class="p-4 bg-orange-400">Join Room</button>
+
      
-      <button id="load">Load Music</button>
-      <i id="play" class="fa fa-play-circle show" aria-hidden="true"></i>
-      <i id="pause" class="fa fa-pause-circle hide" aria-hidden="true"></i>
-      <ul class="songlist">
-        <li id="song0">Despacito</li>
-        <li id="song1">Cute</li>
-        <li>Despacito</li>
-        <li>Despacito</li>
-        <li>Despacito</li>
+      <button id="load" class="text-xl	">Load Music</button>
+      <button id="play" class="m-4 p-4 w-24 h-24 rounded-full bg-green-500 focus:outline-none show" aria-hidden="true"> play</i></button>
+      <button id="pause" class="m-4 p-4 w-24 h-24 rounded-full bg-green-500 focus:outline-none hide" aria-hidden="true"> pause</button>
+      <ul class="list-none flex flex-col gap-4 p-4 h-[55vh] max-h-full ">
+        <li class="hover:bg-slate-200 hover:text-black" id="song0">Despacito</li>
+        <li class="hover:bg-slate-200 hover:text-black" id="song1">Cute</li>
+        <li class="hover:bg-slate-200 hover:text-black">Despacito</li>
+        <li class="hover:bg-slate-200 hover:text-black">Despacito</li>
+        <li class="hover:bg-slate-200 hover:text-black">Despacito</li>
       </ul>
       <audio preload="true" id="myaudio">
         <source src="Perfect.mp3" class="audio-source" />
