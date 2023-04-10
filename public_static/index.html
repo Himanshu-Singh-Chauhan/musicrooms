@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Sockets</title>
+    <link
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+
+    <style>
+      body {
+        /* margin-left: 25%; */
+        background: linear-gradient(transparent, rgba(0, 0, 0, 1));
+        background-color: rgb(32, 87, 100);
+        color: white;
+        text-align: center;
+        font-family: sans-serif;
+        width: 100vw;
+        height: 100vh;
+      }
+      .fa {
+        color: white;
+        font-size: 150px;
+        cursor: pointer;
+      }
+      .fa-play-circle {
+      }
+      .hide {
+        display: none;
+      }
+      .show {
+        display: block;
+      }
+      ul li {
+        list-style: none;
+        display: inline-block;
+        padding: 10px 20px;
+        border: 1px solid white;
+        cursor: pointer;
+      }
+      
+    </style>
+
+    <script src="jquery.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="main.js"></script>
+  </head>
+
+
+  <body>
+    <div >
+      <div class="top__links">
+        <div class="logo">StereoConnect</div>
+        
+      </div>
+     
+      <button id="load">Load Music</button>
+      <i id="play" class="fa fa-play-circle show" aria-hidden="true"></i>
+      <i id="pause" class="fa fa-pause-circle hide" aria-hidden="true"></i>
+      <ul class="songlist">
+        <li id="song0">Despacito</li>
+        <li id="song1">Cute</li>
+        <li>Despacito</li>
+        <li>Despacito</li>
+        <li>Despacito</li>
+      </ul>
+      <audio preload="true" id="myaudio">
+        <source src="Perfect.mp3" class="audio-source" />
+      </audio>
+    </div>
+  </body>
+</html>
