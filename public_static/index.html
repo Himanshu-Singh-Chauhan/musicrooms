@@ -54,24 +54,28 @@
 
   <body>
     <div >
+      <div class="flex flex-col">
       <div class="top__links">
-        <div class="logo">StereoConnect</div>
+        <div class="logo text-left text-4xl antialiased p-6">StereoConnect</div>
         
       </div>
-
-    <input id="roomid" placeholder="enter room id" class="p-4 text-black"/>
-    <button id = "joinroom" class="p-4 bg-orange-400">Join Room</button>
-
-     
-      <button id="load" class="text-xl	">Load Music</button>
+      <div>
+      <input id="roomid" placeholder="enter room id" class="p-4 text-black"/>
+      <button id = "joinroom" class="p-4 bg-orange-400">Join Room</button>
+    </div>
+      
+      <button id="load" class="text-xl	p-4">Load Music</button>
+      <div id="joinedroom" class="text-2xl"></div>
+    </div>
       <button id="play" class="m-4 p-4 w-24 h-24 rounded-full bg-green-500 focus:outline-none show" aria-hidden="true"> play</i></button>
       <button id="pause" class="m-4 p-4 w-24 h-24 rounded-full bg-green-500 focus:outline-none hide" aria-hidden="true"> pause</button>
       <ul class="list-none flex flex-col gap-4 p-4 h-[55vh] max-h-full ">
         <li class="hover:bg-slate-200 hover:text-black" id="song0">Despacito</li>
         <li class="hover:bg-slate-200 hover:text-black" id="song1">Cute</li>
-        <li class="hover:bg-slate-200 hover:text-black">Despacito</li>
-        <li class="hover:bg-slate-200 hover:text-black">Despacito</li>
-        <li class="hover:bg-slate-200 hover:text-black">Despacito</li>
+        <li class="hover:bg-slate-200 hover:text-black" id="song2" >Perfect - Ed Sheeran</li>
+        <li class="hover:bg-slate-200 hover:text-black" id="song3" >Good Life Fate of the Furious</li>
+        <li class="hover:bg-slate-200 hover:text-black" id="song4" >Halsey Without Me</li>
+        <li class="hover:bg-slate-200 hover:text-black" id="song5" >Shape Of You</li>
       </ul>
       <audio preload="true" id="myaudio">
         <source src="Perfect.mp3" class="audio-source" />

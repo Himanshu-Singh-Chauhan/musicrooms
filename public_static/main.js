@@ -10,14 +10,15 @@ $(function () {
     $('#joinroom').click(function () {
         roomname = $('#roomid').val()
         socket.emit('subscribe',roomname);
+        $('#joinedroom').html(`Joined room - ${roomname}`)
         console.log(roomname)
     })
     $('#load').click(function () {
        audio.load();
-       $('#load').html('Loading...');
+       $('#load').html('Song Loading...');
     });
     function loaded() {
-        $('#load').html('Loaded.');
+        $('#load').html('Song Loaded.');
     }
     audio.addEventListener('canplay',loaded,false);
 
@@ -32,6 +33,30 @@ $(function () {
         $('#load').click();
         $('#pause').click();
         socket.emit('song1',roomname);
+    });
+    $('#song2').click(function () {
+        $('#myaudio').html('<source src="Perfect.mp3" class="audio-source">');
+        $('#load').click();
+        $('#pause').click();
+        socket.emit('song2',roomname);
+    });
+    $('#song3').click(function () {
+        $('#myaudio').html('<source src="Good_Life_Fate_of_the_Furious.mp3" class="audio-source">');
+        $('#load').click();
+        $('#pause').click();
+        socket.emit('song3',roomname);
+    });
+    $('#song4').click(function () {
+        $('#myaudio').html('<source src="Halsey Without Me.mp3" class="audio-source">');
+        $('#load').click();
+        $('#pause').click();
+        socket.emit('song4',roomname);
+    });
+    $('#song5').click(function () {
+        $('#myaudio').html('<source src="Shape Of You.mp3" class="audio-source">');
+        $('#load').click();
+        $('#pause').click();
+        socket.emit('song5',roomname);
     });
     $('#play').click(function () {
         console.log("play");
@@ -80,6 +105,27 @@ $(function () {
         $('#myaudio').html('<source src="cute.mp3" class="audio-source">');
         $('#load').click();
     });
+    socket.on('song2',function (data) {
+        console.log(data);
+        $('#myaudio').html('<source src="Perfect.mp3" class="audio-source">');
+        $('#load').click();
+    });
+    socket.on('song3',function (data) {
+        console.log(data);
+        $('#myaudio').html('<source src="Good_Life_Fate_of_the_Furious.mp3" class="audio-source">');
+        $('#load').click();
+    });
+    socket.on('song4',function (data) {
+        console.log(data);
+        $('#myaudio').html('<source src="Halsey Without Me.mp3" class="audio-source">');
+        $('#load').click();
+    });
+    socket.on('song5',function (data) {
+        console.log(data);
+        $('#myaudio').html('<source src="Shape Of You.mp3" class="audio-source">');
+        $('#load').click();
+    });
+
     socket.on("current", function (data) {
         var diff = audio.currentTime - data;
         if (diff < 0 || diff > 2) {
